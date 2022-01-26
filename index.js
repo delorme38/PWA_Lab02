@@ -1,19 +1,35 @@
+// if ('serviceWorker' in navigator) {
+//    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+//      // registration worked
+//      console.log('Registration succeeded. Scope is ' + reg.scope);
+//    }).catch(function(error) {
+//      // registration failed
+//      console.log('Registration failed with ' + error);
+//    });
+//  }
+
+ if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/sw.js').then(function(reg) {
+ 
+     if(reg.installing) {
+       console.log('Service worker installing');
+     } else if(reg.waiting) {
+       console.log('Service worker installed');
+     } else if(reg.active) {
+       console.log('Service worker active');
+     }
+   }).catch(function(error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+    });
+  }
+  
+ 
+
 import Carte from "./Carte.js";
 let cartes = Array();
 
-if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('/sw.js').then(function(reg) {
-     // registration worked
-     console.log('Registration succeeded. Scope is ' + reg.scope);
-   }).catch(function(error) {
-     // registration failed
-     console.log('Registration failed with ' + error);
-   });
- }
-
-
 remplireCarte();
-
 
 // la fonction existe seulement pour creer un tableau de carte general pour tester l'exemple du site
 // ici on pourrait avoir une base de donnee en JSON ou XML pour generer l'affichage du site.
