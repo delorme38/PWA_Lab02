@@ -16,7 +16,7 @@
   
  
 
-import Carte from "/Carte.js";
+import Carte from "./Carte.js";
 let cartes = Array();
 
 remplireCarte();
