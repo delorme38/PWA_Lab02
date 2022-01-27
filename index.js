@@ -1,5 +1,9 @@
  if ('serviceWorker' in navigator) {
+<<<<<<< HEAD
    navigator.serviceWorker.register('sw.js').then(function(reg) {
+=======
+   navigator.serviceWorker.register('./sw.js').then(function(reg) {
+>>>>>>> e9e87e7cbf026df27551a5a44172301b64dd0c1d
  
      if(reg.installing) {
        console.log('Service worker installing');
