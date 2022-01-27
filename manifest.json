@@ -3,7 +3,7 @@
     "background_color": "#f69435",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "https://delorme38.github.io/PWA_Lab02/",
     "id": "/",
     "name": "app-test",
     "short_name": "test",
