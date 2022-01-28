@@ -48,7 +48,7 @@ self.addEventListener('fetch', function(event) {
           });
           return response;
         }).catch(function () {
-          return caches.match('img.jpg');
+          return caches.match('img/img.jpg');
         });
       }
     }));
