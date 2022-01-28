@@ -4,7 +4,9 @@ self.addEventListener('install', (e) => {
         caches.open('v1').then((cache) => {
             return cache.addAll([
                 'index.html',
+                'manifest.json',
                 'index.js',
+                'sw.js',
                 'Carte.js',
                 'favicon.ico',
                 'bootstrap-5.1.3-dist/css/bootstrap.min.css',
@@ -46,7 +48,7 @@ self.addEventListener('fetch', function(event) {
           });
           return response;
         }).catch(function () {
-          return caches.match('img/img-1.jpg');
+          return caches.match('img.jpg');
         });
       }
     }));
