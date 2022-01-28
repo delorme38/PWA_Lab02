@@ -4,6 +4,7 @@
     "display": "standalone",
     "scope": "https://delorme38.github.io/PWA_Lab02/",
     "start_url": "https://delorme38.github.io/PWA_Lab02/",
+    "id":"/PWA_Lab02/",
     "name": "app-test",
     "short_name": "test",
     "description": "test d'application",
