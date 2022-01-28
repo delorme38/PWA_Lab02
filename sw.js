@@ -4,9 +4,7 @@ self.addEventListener('install', (e) => {
         caches.open('v1').then((cache) => {
             return cache.addAll([
                 'index.html',
-                'manifest.json',
                 'index.js',
-                'sw.js',
                 'Carte.js',
                 'favicon.ico',
                 'bootstrap-5.1.3-dist/css/bootstrap.min.css',
@@ -42,13 +40,13 @@ self.addEventListener('fetch', function(event) {
           // we need to save clone to put one copy in cache
           // and serve second one
           let responseClone = response.clone();
-
+          
           caches.open('v1').then(function (cache) {
             cache.put(event.request, responseClone);
           });
           return response;
         }).catch(function () {
-          return caches.match('img.jpg');
+          return caches.match('img/img.jpg');
         });
       }
     }));
