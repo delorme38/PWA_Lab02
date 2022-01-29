@@ -1,6 +1,6 @@
 {
-    "theme_color": "#f69435",
-    "background_color": "#f69435",
+    "theme_color": "#212529",
+    "background_color": "#212529",
     "display": "standalone",
     "scope": "https://delorme38.github.io/PWA_Lab02/",
     "start_url": "https://delorme38.github.io/PWA_Lab02/",
