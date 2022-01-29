@@ -25,7 +25,7 @@ remplireCarte();
 // ici on pourrait avoir une base de donnee en JSON ou XML pour generer l'affichage du site.
 function remplireCarte() {
    let pos;
-   for (let i = 0; i < 9; i++) {
+   for (let i = 0; i < 10; i++) {
       let carte = new Carte();
       pos = (i+1);
       carte.id = pos;
