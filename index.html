@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <link rel="manifest" href="manifest.json">  
+  <link rel="manifest" href="manifest.json">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +17,12 @@
   <title>Bonjour le monde!</title>
 </head>
 
-<body>
+<body class="">
 
-  <script src="bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
+
 
   <main>
-    
+
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container">
         <h1 class="me-5">LibreDesign</h1>
@@ -49,7 +49,7 @@
       </div>
     </nav>
 
-    <div class="container bg-dark text-white text-center py-5">
+    <div class="container-fluid bg-dark text-white text-center py-5">
       <div class="row">
         <h2>
           Decouvrez nos offres exclusives
@@ -59,16 +59,31 @@
         </p>
       </div>
     </div>
+    <div class="position-fixed  bottom-0 end-0 text-center" style="z-index: 11">
+      <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="img/icon-96x96.png" class="rounded me-4" alt="...">
+        </div>
+        <div class="toast-body">
+         <h4>Creation LD</h4>
+          <button type="button" class="btn btn-primary btn-sm" id="appButton">Installez l'appli</button>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Ignorer</button>
+        </div>
+      </div>
+    </div>
+
 
     <div class="container my-3">
       <div class="row" id="carte">
       </div>
     </div>
 
+
   </main>
-  
-  
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
 </body>
 
 </html>

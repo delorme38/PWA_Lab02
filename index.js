@@ -25,13 +25,13 @@ remplireCarte();
 // ici on pourrait avoir une base de donnee en JSON ou XML pour generer l'affichage du site.
 function remplireCarte() {
    let pos;
-   for (let i = 0; i < 8; i++) {
+   for (let i = 0; i < 9; i++) {
       let carte = new Carte();
       pos = (i+1);
       carte.id = pos;
       carte.title = '<h5 class="card-title">Photo numero ' + (pos) + '</h5>';
       carte.image = '<img src="img/img-' + (pos) + '.jpg" class="card-img-top" alt="Une image">';
-      carte.bouton = '<a href="img/img-' + (pos) + '" class="btn btn-primary">Bouton numero ' + (pos) + '</a>';
+      carte.bouton = '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample' + (pos) + '" aria-expanded="false" aria-controls="collapseExample"> Button with data-bs-target </button></p><div class="collapse" id="collapseExample'+(pos)+'"><div class="card card-body">Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</div></div>';
       carte.desc = '<p class="card-text">Une photos pour decrire l\'image numero ' + (pos) + '</p>';
       cartes.push(carte);
    }
@@ -50,4 +50,27 @@ function createTag() {
       res += sDiv + cartes[i].image + cartes[i].title + cartes[i].desc + cartes[i].bouton + eDiv
       affich.innerHTML = res;
    }
+}
+
+let deferredPrompt;
+let plusDemander = false;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if(!plusDemander)toast();
+  
+  console.log(`'beforeinstallprompt' a été déclenché !`);
+    appButton.addEventListener('click', function() {
+      plusDemander = true; 
+      deferredPrompt.prompt();
+    })
+
+});
+
+// fait apparaitre la toast
+function toast() {
+  console.log('installApp');
+  const fenetre = document.getElementById('liveToast')
+  const toast = new bootstrap.Toast(fenetre, {delay: 6000}) //reste affichée 6 secondes seulement
+  toast.show();
 }
