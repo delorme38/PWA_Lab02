@@ -1,9 +1,9 @@
 {
-    "theme_color": "#004557",
-    "background_color": "#004557",
+    "theme_color": "#212529",
+    "background_color": "#212529",
     "display": "standalone",
-    "scope": "/PWA_Lab02/",
-    "start_url": "/PWA_Lab02/",
+    "scope": "https://delorme38.github.io/PWA_Lab02/",
+    "start_url": "https://delorme38.github.io/PWA_Lab02/",
     "id":"/PWA_Lab02/",
     "name": "Creation LD",
     "short_name": "LD",
