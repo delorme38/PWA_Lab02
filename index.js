@@ -53,26 +53,20 @@ function createTag() {
 }
 
 let deferredPrompt;
-let plusDemander = false;
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  if (!plusDemander) toast();
-
+  toast();
   console.log(`'beforeinstallprompt'`);
   appButton.addEventListener('click', function () {
     deferredPrompt.prompt();
   })
-  cancelButton.addEventListener('click', function () {
-    plusDemander = true;
-  })
-
 });
 
 // fait apparaitre la toast
 function toast() {
   console.log('installApp');
-  const fenetre = document.getElementById('liveToast')
+  const fenetre = document.getElementById('maToast')
   const toast = new bootstrap.Toast(fenetre, { delay: 5000 }) //reste affichée 6 secondes seulement
   toast.show();
 }
